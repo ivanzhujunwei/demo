@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 import AppNav from './AppNav';
 import AppFooter from './AppFooter';
-
+import Promotion from './home/Promotion';
 
 class App extends Component {
   render() {
     return (
         <div>
             <AppNav/>
+            <Promotion/>
             <br/><br/><br/><br/><br/><br/><br/><br/>
             <AppFooter/>
         </div>

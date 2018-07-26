@@ -47,13 +47,37 @@
 <noscript>
     You need to enable JavaScript to run this app.
 </noscript>
-<div id="root"></div>
-<!--<div id = "nav"></div>-->
-<!--<br/><br/><br/><br/><br/><br/><br/><br/>-->
-<!--<div id = "footer"></div>-->
 
-<a  class = "js-go-to u-go-to-v1 g-width-40 g-height-40 g-color-primary g-bg-main-opacity-0_5 g-bg-main--hover g-bg-main--focus g-font-size-12 rounded"
-    href = "#" data-type = "fixed" data-position = '{
+
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '640047309676102',
+            cookie: true,
+            xfbml: true,
+            version: '{latest-api-version}'
+        });
+
+        FB.AppEvents.logPageView();
+
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div id = "root"></div>
+
+<a class = "js-go-to u-go-to-v1 g-width-40 g-height-40 g-color-primary g-bg-main-opacity-0_5 g-bg-main--hover g-bg-main--focus g-font-size-12 rounded"
+   href = "#" data-type = "fixed" data-position = '{
        "bottom": 15,
        "right": 15
      }' data-offset-top = "400" data-compensation = "#js-header" data-show-effect = "zoomIn">
@@ -69,5 +93,62 @@
   To begin the development, run `npm start` or `yarn start`.
   To create a production bundle, use `npm run build` or `yarn build`.
 -->
+<!-- JS Global Compulsory -->
+<script src = "assets/vendor/jquery/jquery.min.js"></script>
+<script src = "assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<script src = "assets/vendor/popper.min.js"></script>
+<script src = "assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+<!-- JS Implementing Plugins -->
+<script src = "assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+<script src = "assets/vendor/dzsparallaxer/dzsparallaxer.js"></script>
+<script src = "assets/vendor/dzsparallaxer/dzsscroller/scroller.js"></script>
+<script src = "assets/vendor/dzsparallaxer/advancedscroller/plugin.js"></script>
+<script src = "assets/vendor/fancybox/jquery.fancybox.min.js"></script>
+<script src = "assets/vendor/slick-carousel/slick/slick.js"></script>
+
+<!-- JS Unify -->
+<script src = "../../assets/js/hs.core.js"></script>
+<script src = "../../assets/js/components/hs.header.js"></script>
+<script src = "../../assets/js/helpers/hs.hamburgers.js"></script>
+<script src = "../../assets/js/components/hs.dropdown.js"></script>
+<script src = "../../assets/js/components/hs.popup.js"></script>
+<script src = "../../assets/js/components/hs.carousel.js"></script>
+<script src = "../../assets/js/components/hs.go-to.js"></script>
+
+<!-- JS Customization -->
+<script src = "../../assets/js/custom.js"></script>
+<!-- JS Plugins Init. -->
+<script>
+    $(document).on('ready', function () {
+        // initialization of header
+        $.HSCore.components.HSHeader.init($('#js-header'));
+        $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+        // initialization of HSMegaMenu component
+        $('.js-mega-menu').HSMegaMenu({
+            event: 'hover',
+            pageContainer: $('.container'),
+            breakpoint: 991
+        });
+
+        // initialization of HSDropdown component
+        $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+            afterOpen: function () {
+                $(this).find('input[type="search"]').focus();
+            }
+        });
+
+        // initialization of popups
+        $.HSCore.components.HSPopup.init('.js-fancybox');
+
+        // initialization of carousel
+        $.HSCore.components.HSCarousel.init('.js-carousel');
+
+        // initialization of go to
+        $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+</script>
 </body>
+
 </html>
