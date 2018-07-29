@@ -1,20 +1,24 @@
 import React, {Component} from 'react';
 
+const promStyle = {
+    height: '120%',
+    backgroundImage: `url(assets/img/background.jpg)`
+};
+
 class Promotion extends Component {
     render() {
         return (
-            // Promo Block 
+            // Promo Block
             <div className = "dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall"
                  data-options = '{direction: "reverse", settings_mode_oneelement_max_offset: "150"}'>
                 <div className = "divimage dzsparallaxer--target w-100 g-bg-cover g-bg-black-opacity-0_3--after"
-                     style = "height: 120%; background-image: url(assets/img-temp/1920x1080/img1.jpg);"/>
-
+                     style = {promStyle}/>
                 <div className = "container g-pt-170">
                     <div className = "row justify-content-between align-items-center">
                         <div className = "col-md-6 col-lg-7 g-mb-90">
                             {/* Content Info */}
                             <div className = "mb-5">
-                                <h1 className = "g-color-white g-font-weight-600 g-font-size-50 mb-3">Fast. Flexible.
+                                <h1 className = "g-color-white g-font-weight-600 g-font-size-50 mb-3">Fast9. Flexible.
                                                                                                       Leaders.</h1>
                                 <p className = "g-color-white g-font-size-18 g-line-height-2">Unify Marketing is a
                                                                                               comprehensive, creation
