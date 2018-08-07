@@ -1,9 +1,30 @@
 import React, {Component} from 'react';
 import './App.css';
 
+
 class AppNav extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            isSignUp: true
+        };
+        this.setState = this.setState.bind(this);
+    }
+
+    setState(isSignUp) {
+        alert(1);
+        this.isSignUp = !isSignUp;
+        console.log(this.isSignUp);
+    };
+
+    pressHandler(isSignUp) {
+        this.props.set_sign_up_state(isSignUp);
+    }
+
     render() {
         return (
+
             // Header
             <header id = "js-header"
                     className = "u-header u-header--sticky-top u-header--toggle-section u-header--change-appearance u-shadow-v19">
@@ -83,16 +104,33 @@ class AppNav extends Component {
 
                                     <li className = "nav-item g-mx-15 g-mx-3--lg g-mb-5 g-mb-0--lg">
                                         <a
+                                            className = "nav-link d-inline-block rounded g-brd-around g-brd-2 g-brd-primary g-color-primary--hover g-bg-transparent g-bg-main--hover g-font-weight-600 g-font-size-15 g-px-20 g-py-8"
+                                            href = "../../index.html">Main</a>
+                                    </li>
+                                    {/* Login Register*/}
+                                    <li className = "nav-item g-mx-15 g-mx-3--lg g-mb-5 g-mb-0--lg">
+                                        <a
                                             className = "nav-link rounded g-color-primary--hover g-bg-transparent g-bg-main--hover g-font-weight-600 g-font-size-15 g-px-14 g-py-10"
-                                            href = "page-contacts-1.html">
-                                            Contacts
+                                            href = "#"
+                                            onClick = {() => {
+                                                this.pressHandler(true);
+                                                // this.setState(this.state.isSignUp)
+                                            }}>
+                                            Sign up
                                         </a>
                                     </li>
                                     <li className = "nav-item g-mx-15 g-mx-3--lg g-mb-5 g-mb-0--lg">
                                         <a
-                                            className = "nav-link d-inline-block rounded g-brd-around g-brd-2 g-brd-primary g-color-primary--hover g-bg-transparent g-bg-main--hover g-font-weight-600 g-font-size-15 g-px-20 g-py-8"
-                                            href = "../../index.html">Main</a>
+                                            className = "nav-link rounded g-color-primary--hover g-bg-transparent g-bg-main--hover g-font-weight-600 g-font-size-15 g-px-14 g-py-10"
+                                            href = "#"
+                                            onClick = {() => {
+                                                this.pressHandler(false);
+                                                // this.setState(this.state.isSignUp)
+                                            }}>
+                                            Log in
+                                        </a>
                                     </li>
+                                    {/* End Login Register*/}
                                 </ul>
                             </div>
                             {/* End Navigation */}
@@ -125,10 +163,10 @@ class AppNav extends Component {
                     </nav>
                 </div>
             </header>
-        // End Header
+            // End Header
 
-    );
+        );
     }
-    }
+}
 
-    export default AppNav;
+export default AppNav;
