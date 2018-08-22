@@ -21,7 +21,7 @@ class Login extends Component {
                     </div>
 
                     <div className = "text-center mb-3">
-                        <h3 className = "h5">Join with</h3>
+                        <h3 className = "h5">Login with</h3>
                     </div>
 
                     <div className = "row no-gutters">
