@@ -119,17 +119,6 @@ class AppNav extends Component {
                                             Sign up
                                         </a>
                                     </li>
-                                    <li className = "nav-item g-mx-15 g-mx-3--lg g-mb-5 g-mb-0--lg">
-                                        <a
-                                            className = "nav-link rounded g-color-primary--hover g-bg-transparent g-bg-main--hover g-font-weight-600 g-font-size-15 g-px-14 g-py-10"
-                                            href = "#"
-                                            onClick = {() => {
-                                                this.pressHandler(false);
-                                                // this.setState(this.state.isSignUp)
-                                            }}>
-                                            Log in
-                                        </a>
-                                    </li>
                                     {/* End Login Register*/}
                                 </ul>
                             </div>

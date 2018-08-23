@@ -48,8 +48,8 @@ class Promotion extends Component {
                             </a>
                             {/* End Content Info */}
                         </div>
-                        {this.props.func ? <Register/> : <Login/>}
-
+                        {/*{this.props.func ? <Register/> : <Login/>}*/}
+                        <Login/>
                     </div>
                 </div>
             </div>
